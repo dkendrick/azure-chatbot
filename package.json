@@ -2,9 +2,11 @@
   "name": "chatbot",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app/app.js --exec babel-node",
+    "build": "babel app -d dist",
+    "serve": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +19,14 @@
   },
   "homepage": "https://github.com/dkendrick/azure-chatbot#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0"
+  },
+  "dependencies": {
+    "botbuilder": "^3.13.1",
+    "restify": "^6.3.4"
   }
 }

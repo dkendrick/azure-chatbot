@@ -4,7 +4,7 @@
   "description": "",
   "main": "app/app.js",
   "scripts": {
-    "start": "babel app -d dist && node dist/app.js",
+    "start": "node ./node_modules/.bin/babel app -d dist && node dist/app.js",
     "dev": "nodemon app/app.js --exec babel-node",
     "build": "babel app -d dist",
     "serve": "node dist/app.js"

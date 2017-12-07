@@ -18,10 +18,8 @@ server.get('/', (req, res, cb) => {
   return cb();
 });
 
-const bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 
-// Create bot dialogs
-bot.dialog('/', (session) => {
-  session.send('?');
+const bot = new builder.UniversalBot(connector, (session) => {
+  session.send(`${session.message.text}%s?`);
 });

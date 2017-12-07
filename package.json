@@ -4,7 +4,8 @@
   "description": "",
   "main": "app/app.js",
   "scripts": {
-    "start": "nodemon app/app.js --exec babel-node",
+    "start": "node ./node_modules/babel-cli/bin/babel-node.js index.js",
+    "dev": "nodemon app/app.js --exec babel-node",
     "build": "babel app -d dist",
     "serve": "node dist/app.js"
   },

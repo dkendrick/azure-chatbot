@@ -13,6 +13,11 @@ const connector = new builder.ChatConnector({
   appPassword: process.env.MicrosoftAppPassword,
 });
 
+server.get('/', (req, res, cb) => {
+  res.send('Hello from ig-chatbot!');
+  return cb();
+});
+
 const bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 

@@ -9,9 +9,10 @@ server.listen(process.env.PORT || 3000, () => {
 
 // Create chat bot
 const connector = new builder.ChatConnector({
-  appId: 'YourAppId',
-  appPassword: 'YourAppPassword',
+  appId: process.env.MicrosoftAppId,
+  appPassword: process.env.MicrosoftAppPassword,
 });
+
 const bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
 

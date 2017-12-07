@@ -3,7 +3,7 @@ import restify from 'restify';
 
 // Setup Restify Server
 const server = restify.createServer();
-server.listen(process.env.PORT || 3000, () => {
+server.listen(process.env.PORT || 3978, () => {
   console.log('%s listening to %s', server.name, server.url);
 });
 
@@ -18,5 +18,5 @@ server.post('/api/messages', connector.listen());
 
 // Create bot dialogs
 bot.dialog('/', (session) => {
-  session.send('Hello World');
+  session.send('?');
 });
